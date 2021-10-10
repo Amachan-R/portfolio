@@ -29,9 +29,9 @@
 旅へ行かれた時と次の旅先を検討する時
 
 ## 設計書
-ER図
-テーブル定義書
-アプリケーション詳細設計書
+ER図 https://app.diagrams.net/#G1LJyK-_kDK1_MYR0EqZXKDDNn4m0w5iOS
+テーブル定義書 https://docs.google.com/spreadsheets/d/1dK9EbxwlWNx5Z6YCgrqQAEFQfNu3U_hnx_MdVmF3rUo/edit#gid=2034085517
+アプリケーション詳細設計書 https://docs.google.com/spreadsheets/d/1CRjxbjiysM81YJubZBP16tY7ZFYVeo2n0AZ5y1EgHRk/edit#gid=0
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1wbf_7WTSad_HS8aLwxF5qnndF3MrJEwyKMSrMR7WvE8/edit#gid=0
