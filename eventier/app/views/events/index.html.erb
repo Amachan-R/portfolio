@@ -1,0 +1,14 @@
+<h2>イベントリスト</h2>
+
+<% @events.each do |event| %>
+<div>
+  <%= link_to event_path(event.id) do %>
+    <%= attachment_image_tag event, :image %>
+  <% end %>
+  <p>投稿ユーザ画像 : <%= attachment_image_tag event.user, :profile_image, :fill, 70, 70, fallback: "no_image.jpg" %></p>
+  <p>タイトル : <%= event.name %></p>
+  <p>参加した日 : <%= event.created_at %></p>
+  <p>ユーザーネーム : <%= event.user.name %></p>
+  <p><%= link_to "#{event.event_comments.count} コメント", event_path(event.id) %></p>
+</div>
+<% end %>

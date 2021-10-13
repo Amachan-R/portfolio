@@ -1,0 +1,20 @@
+<div>
+  <h2>Memories of <%= @user.name %></h2>
+  <%= attachment_image_tag @user, :profile_image, :fill, 70,70, format: 'jpeg', fallback: "no_image.jpg" %>
+  <%= @user.name %>
+  <%= @user.introduction %>
+  <% if @user.id == current_user.id %>
+    <%= link_to "変更", edit_user_path(@user) %>
+  <% end %>
+</div>
+
+<% @events.each do |event| %>
+<div>
+  <%= link_to event_path(event.id) do %>
+    <%= attachment_image_tag event, :image %>
+  <% end %>
+  <p>投稿ユーザ画像 : <%= image_tag('no_image.jpg') %></p>
+  <p>タイトル : <%= event.name %></p>
+  <p>参加した日 : <%= event.created_at %></p>
+</div>
+<% end %>

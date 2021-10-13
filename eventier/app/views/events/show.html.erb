@@ -1,0 +1,46 @@
+<div>
+  <%= attachment_image_tag @event, :image %>
+  <p>タイトル : <%= @event.name %></p>
+  <p>内容 : <%= @event.caption %></p>
+  <p>年齢 : <%= @event.age %></p>
+  <p>都道府県 : <%= @event.prefecture %></p>
+  <p>参加した日 : <%= @event.created_at %></p>
+  <p>ユーザーネーム : <%= @event.user.name %></p>
+  <% if @event.user == current_user %>
+    <%= link_to "編集", edit_event_path(@event) %>
+    <%= link_to "削除", event_path(@event), method: :delete %>
+  <% end %>
+  <% if @event.favorited_by?(current_user) %>
+    <p>
+      <%= link_to event_favorites_path(@event), method: :delete do %>
+        ★<%= @event.favorites.count %> いいね
+      <% end %>
+    </p>
+  <% else %>
+    <p>
+      <%= link_to event_favorites_path(@event), method: :post do %>
+        ☆<%= @event.favorites.count %> いいね
+      <% end %>
+    </p>
+  <% end %>
+</div>
+
+<div>
+  <p>コメント件数 : <%= @event.event_comments.count %></p>
+  <% @event.event_comments.each do |event_comment| %>
+    <p><%= image_tag('no_image.jpg') %></p>
+    <%= event_comment.user.name %>
+    <%= event_comment.created_at.strftime('%Y/%m/%d') %><%= event_comment.comment %>
+    <% if event_comment.user == current_user %>
+      <div>
+        <%= link_to "削除", event_event_comment_path(event_comment.event, event_comment), method: :delete %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<div>
+  <%= form_with(model:[@event, @event_comment], local: true) do |f| %>
+    <%= f.text_area :comment, rows:'5', placeholder: "コメント記載" %>
+    <%= f.submit "送信する" %>
+  <% end %>
+</div>
