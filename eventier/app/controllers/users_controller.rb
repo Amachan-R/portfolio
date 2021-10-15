@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    @users = User.page(params[:page]).per(20).reverse_order
   end
 
   def show
     @user = User.find(params[:id])
-    @events = @user.events.all
+    @events = @user.events.page(params[:page]).per(16).reverse_order
   end
 
   def edit

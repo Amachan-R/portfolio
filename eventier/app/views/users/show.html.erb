@@ -1,20 +1,37 @@
-<div>
-  <h2>Memories of <%= @user.name %></h2>
-  <%= attachment_image_tag @user, :profile_image, :fill, 70,70, format: 'jpeg', fallback: "no_image.jpg" %>
-  <%= @user.name %>
-  <%= @user.introduction %>
-  <% if @user.id == current_user.id %>
-    <%= link_to "変更", edit_user_path(@user) %>
-  <% end %>
-</div>
+<div class="container">
+  <div class="m-5 border-bottom border-dark">
+    <h2 class="text-center">Memories of <%= @user.name %></h2>
+    <div class="text-right"><%= link_to '+', "/events/new", class: "btn border-dark rounded-circle" %></div>
+  </div>
 
-<% @events.each do |event| %>
-<div>
-  <%= link_to event_path(event.id) do %>
-    <%= attachment_image_tag event, :image %>
-  <% end %>
-  <p>投稿ユーザ画像 : <%= image_tag('no_image.jpg') %></p>
-  <p>タイトル : <%= event.name %></p>
-  <p>参加した日 : <%= event.created_at %></p>
+  <div class="row">
+    <div class="col-3 border border-dark">
+      <div class="border-bottom bg-dark text-white text-center py-3">
+        <p>プロフィール</p>
+      </div><br />
+      <%= attachment_image_tag @user, :profile_image, :fill, 70,70, format: 'jpeg', fallback: "human.png", class: "rounded-circle my-4 ml-3" %><br />
+      <p class="my-2 ml-4"><strong><%= @user.name %></strong></p><br />
+      <p class="my-2 ml-4"><%= @user.introduction %></p><br />
+      <% if @user.id == current_user.id %>
+        <%= link_to "変更", edit_user_path(@user), class: "btn btn-outline-secondary btn-block" %>
+      <% end %>
+    </div>
+    <div class="col-9">
+      <div class="row">
+        <% @events.each do |event| %>
+          <div class="col-3 shadow mb-2">
+            <%= link_to event_path(event.id) do %>
+              <%= attachment_image_tag event, :image, :fill, 110, 100, class: "mt-4" %>
+            <% end %>
+            <p><strong><%= event.name %></strong></p>
+            <p><strong><%= event.prefecture %></strong></p>
+            <p><strong><%= event.created_at %></strong></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="pull-right">
+    <%= paginate @events %>
+  </div>
 </div>
-<% end %>

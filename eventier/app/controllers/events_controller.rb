@@ -7,12 +7,15 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user_id = current_user.id
-    @event.save
-    redirect_to events_path
+    if @event.save
+      redirect_to events_path
+    else
+      render :new
+    end
   end
 
   def index
-    @events = Event.all
+    @events = Event.page(params[:page]).per(20).reverse_order
   end
 
   def show

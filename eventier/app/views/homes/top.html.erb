@@ -6,8 +6,28 @@
       　　旅先管理アプリ
     </p>
     <div class="ml-5">
-      <%= link_to "新規登録", new_user_registration_path, class: "btn btn-success ml-5 mt-2" %>
-      <%= link_to "ログイン", new_user_session_path, class: "btn btn-primary ml-5 mt-2" %>
+      <%= link_to "新規登録", new_user_registration_path, class: "border rounded-pill bg-primary text-white px-5 ml-2 mt-2" %>
+      <%= link_to "ログイン", new_user_session_path, class: "border rounded-pill bg-success text-white px-5 ml-3 mt-2" %>
     </div>
   </div>
+</div>
+<div classs="container">
+  <div class="row">
+    <div class="col-8 offset-5 mt-5">
+      <h2><strong>直近の投稿</strong></h2>
+    </div>
+  </div>
+  <div class="row">
+      <% @events.each do |event| %>
+        <div class="col-2 offset-1">
+          <%= link_to(event_path(event.id)) do %>
+            <span><%= attachment_image_tag event, :image, :fill, 100, 100, class: "m-1" %></span>
+          <% end %><br />
+          <%= event.name %><br />
+          <%= event.created_at %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-11 text-right"><%= link_to 'すべての投稿をみる', events_path %></div>
 </div>

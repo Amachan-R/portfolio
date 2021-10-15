@@ -1,8 +1,36 @@
-<h2>ユーザ一覧</h2>
-
-<% @users.each do |user| %>
-<div>
-  <%= attachment_image_tag user, :profile_image, size: "40x40", fallback: "no_image.jpg" %>
-  <%= user.name %>
+<div class="container">
+  <div class="text-center m-5 border-bottom border-dark">
+    <h2>ユーザーリスト</h2>
+  </div>
+  <div class="row">
+    <div class="col-10 offset-1">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>プロフィール画像</th>
+            <th>ニックネーム</th>
+            <th>総投稿数</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td>
+                <%= link_to user_path(user.id) do %>
+                  <%= attachment_image_tag user, :profile_image, size: "40x40", fallback: "human.png", class: "rounded-circle p-2" %>
+                <% end %>
+              </td>
+              <td><%= user.name %></td>
+              <td><%= user.events.count %>件</td>
+              <td></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="pull-right">
+    <%= paginate @users %>
+  </div>
 </div>
-<% end %>
