@@ -10,6 +10,7 @@
     <div class="row">
       <div class="field col-8 offset-4 my-3">
         <h4>イベント画像</h4>
+        <%= attachment_image_tag @event, :image, :fill, 80, 80 %>
         <%= f.attachment_field :image %>
       </div>
     </div><br />

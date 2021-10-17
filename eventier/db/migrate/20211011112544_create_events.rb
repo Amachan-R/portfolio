@@ -6,8 +6,8 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :image_id
       t.text :caption
-      t.string :age
-      t.string :prefecture
+      t.string :age, null: false, default: 0
+      t.string :prefecture, null: false, default: 0
       t.timestamps
     end
   end

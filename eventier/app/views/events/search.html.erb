@@ -1,18 +1,16 @@
 <div class="container">
   <div class="text-center m-5 border-bottom border-dark">
-    <h2 class="text-center">イベントリスト</h2>
+    <h2 class="text-center">Search結果</h2>
     <div class="row">
       <div class="col-4">
-        <%= form_with url: events_search_path, method: :get, local: true do |f| %>
-          <%= f.text_field :search %>
-          <%= f.submit 'Search', :name => nil %>
+        <%= form_tag(events_search_path,:method => 'get') do %>
+          <%= text_field_tag :search %>
+          <%= submit_tag 'Search', :name => nil %>
         <% end %>
       </div>
       <div class="col-8 text-right mb-1"><%= link_to '+', "/events/new", class: "btn border-dark rounded-circle" %></div>
     </div>
   </div>
-
-
 
   <div class="row">
     <% @events.each do |event| %>
@@ -26,8 +24,5 @@
         <p><%= link_to "#{event.event_comments.count} コメント", event_path(event.id) %></p>
       </div>
     <% end %>
-  </div>
-  <div class="pull-right">
-    <%= paginate @events %>
   </div>
 </div>

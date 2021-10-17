@@ -10,7 +10,7 @@
     <%= form_with model:@user, local:true do |f| %>
       <div class="row">
       　<div class="field col-2 offset-4 my-3">
-          <%= attachment_image_tag @user, :profile_image, :fill, 80, 80, fallback: "human.png" %>
+          <%= attachment_image_tag @user, :profile_image, :fill, 80, 80, fallback: "human.png", size:'80x80' %>
         </div>
         <div class="field col-3 my-3">
           <h4>プロフィール画像</h4>

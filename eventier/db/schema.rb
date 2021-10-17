@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 2021_10_13_155047) do
     t.string "name"
     t.string "image_id"
     t.text "caption"
+    t.string "age", default: "0", null: false
+    t.string "prefecture", default: "0", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "prefecture", default: 0, null: false
-    t.integer "age", default: 0, null: false
   end
 
   create_table "favorites", force: :cascade do |t|

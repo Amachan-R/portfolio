@@ -14,9 +14,15 @@ class EventsController < ApplicationController
     end
   end
 
+  def search
+    @events = Event.search(params[:search])
+  end
+
   def index
     @events = Event.page(params[:page]).per(20).reverse_order
   end
+
+
 
   def show
     @event = Event.find(params[:id])

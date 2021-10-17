@@ -1,6 +1,6 @@
 <div class="container">
   <div class="text-center m-5 border-bottom border-dark">
-    <h2 class="text-center">ユーザーリスト</h2>
+    <h2 class="text-center">Search結果</h2>
     <div class="row">
       <div class="col-4 mb-1">
         <%= form_tag(users_search_path,:method => 'get') do %>
@@ -37,8 +37,5 @@
         </tbody>
       </table>
     </div>
-  </div>
-  <div class="pull-right">
-    <%= paginate @users %>
   </div>
 </div>
