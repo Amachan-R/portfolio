@@ -38,11 +38,12 @@ https://docs.google.com/spreadsheets/d/1wbf_7WTSad_HS8aLwxF5qnndF3MrJEwyKMSrMR7W
 
 ## 開発環境
 - OS：Linux(CentOS)
-- 言語：HTML,CSSJavaScript,Ruby,SQL
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
 
 ## 使用素材
-- 著作権フリーの画像素材を使用予定(まだ明確でない)
-- 使用した場合は、必ずサービス名とURLを明記してください。
+写真素材：O-DAN　https://o-dan.net/ja/
+アイコン素材：ICOOON MONO　https://icooon-mono.com/
+ロゴ素材：designevo  https://www.designevo.com/
