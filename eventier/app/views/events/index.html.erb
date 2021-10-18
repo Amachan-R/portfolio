@@ -23,7 +23,10 @@
         <p><%= attachment_image_tag event.user, :profile_image, :fill, 70, 70, fallback: "human.png", class: "rounded-circle p-2 mt-2" %>　<strong><%= event.user.name %></strong></p>
         <p><strong><%= event.name %></strong></p>
         <p><strong><%= event.created_at %></strong></p>
-        <p><%= link_to "#{event.event_comments.count} コメント", event_path(event.id) %></p>
+        <p>
+          <%= link_to "#{event.event_comments.count} コメント", event_path(event.id) %>
+          <%= link_to "★#{event.favorites.count}", event_path(event.id) %>
+        </p>
       </div>
     <% end %>
   </div>

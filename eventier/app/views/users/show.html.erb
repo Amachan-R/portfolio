@@ -10,6 +10,12 @@
         <p>プロフィール</p>
       </div><br />
       <%= attachment_image_tag @user, :profile_image, :fill, 70,70, format: 'jpeg', fallback: "human.png", class: "rounded-circle my-4 ml-3" %><br />
+      <%= link_to user_followwings_path(@user.id) do %>
+        <p class="btn btn-sm btn-outline-dark">フォロー中:<%= @user.followings.count %></p>
+      <% end %><br />
+      <%= link_to user_followers_path(@user.id) do %>
+        <p class="btn btn-sm btn-outline-dark">フォロワー:<%= @user.followers.count %></p>
+      <% end %><br />
       <p class="my-2 ml-4"><strong><%= @user.name %></strong></p><br />
       <p class="my-2 ml-4"><%= @user.introduction %></p><br />
       <% if @user.id == current_user.id %>
