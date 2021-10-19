@@ -2,13 +2,13 @@
   <div class="text-center m-5 border-bottom border-dark">
     <h2 class="text-center">イベントリスト</h2>
     <div class="row">
-      <div class="col-4">
+      <div class="col-6">
         <%= form_with url: events_search_path, method: :get, local: true do |f| %>
           <%= f.text_field :search %>
           <%= f.submit 'Search', :name => nil %>
         <% end %>
       </div>
-      <div class="col-8 text-right mb-1"><%= link_to '+', "/events/new", class: "btn border-dark rounded-circle" %></div>
+      <div class="col-6 text-right mb-1"><%= link_to '+', "/events/new", class: "btn border-dark rounded-circle" %></div>
     </div>
   </div>
 

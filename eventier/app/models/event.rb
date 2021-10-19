@@ -5,9 +5,9 @@ class Event < ApplicationRecord
   has_many :event_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
-  validates :name, presence: true
+  validates :name, presence: true, length: { maximum: 30 }
   validates :image, presence: true
-  validates :caption, presence: true
+  validates :caption, presence: true, length: { maximum: 300 }
 
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
