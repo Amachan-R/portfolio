@@ -46198,3 +46198,415 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 199ms (Views: 190.6ms | ActiveRecord: 3.0ms)
 
 
+Started GET "/" for 126.95.247.76 at 2021-10-23 07:27:24 +0000
+Cannot render console from 126.95.247.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/homes/top.html.erb:21
+  Rendered homes/top.html.erb within layouts/application (4605.0ms)
+Completed 200 OK in 5041ms (Views: 5020.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 126.95.247.76 at 2021-10-23 07:27:30 +0000
+Cannot render console from 126.95.247.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/homes/top.html.erb:21
+  Rendered homes/top.html.erb within layouts/application (9.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 182ms (Views: 179.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events/12" for 126.95.247.76 at 2021-10-23 07:27:46 +0000
+Cannot render console from 126.95.247.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:28
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 12]]
+  ↳ app/views/events/show.html.erb:30
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."event_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["event_id", 12], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/event.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 12]]
+  ↳ app/views/events/show.html.erb:42
+  [1m[36mEventComment Load (0.1ms)[0m  [1m[34mSELECT "event_comments".* FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 12]]
+  ↳ app/views/events/show.html.erb:50
+  Rendered events/show.html.erb within layouts/application (44.2ms)
+Completed 200 OK in 157ms (Views: 141.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/events/12" for 126.95.247.76 at 2021-10-23 07:28:52 +0000
+Cannot render console from 126.95.247.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:28
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 12]]
+  ↳ app/views/events/show.html.erb:30
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."event_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["event_id", 12], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/event.rb:13
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 12]]
+  ↳ app/views/events/show.html.erb:42
+  [1m[36mEventComment Load (0.1ms)[0m  [1m[34mSELECT "event_comments".* FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 12]]
+  ↳ app/views/events/show.html.erb:50
+  Rendered events/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 125ms (Views: 118.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/events" for 126.95.247.76 at 2021-10-23 07:30:07 +0000
+Cannot render console from 126.95.247.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 12]]
+  ↳ app/views/events/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 12]]
+  ↳ app/views/events/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 11]]
+  ↳ app/views/events/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 11]]
+  ↳ app/views/events/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 10]]
+  ↳ app/views/events/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 10]]
+  ↳ app/views/events/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 9]]
+  ↳ app/views/events/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 9]]
+  ↳ app/views/events/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 7]]
+  ↳ app/views/events/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 7]]
+  ↳ app/views/events/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 6]]
+  ↳ app/views/events/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 6]]
+  ↳ app/views/events/index.html.erb:28
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 5]]
+  ↳ app/views/events/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 5]]
+  ↳ app/views/events/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 4]]
+  ↳ app/views/events/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 4]]
+  ↳ app/views/events/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 1]]
+  ↳ app/views/events/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 1]]
+  ↳ app/views/events/index.html.erb:28
+  Rendered events/index.html.erb within layouts/application (94.3ms)
+Completed 200 OK in 210ms (Views: 202.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/events" for 126.95.247.76 at 2021-10-23 07:35:48 +0000
+Cannot render console from 126.95.247.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 12]]
+  ↳ app/views/events/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 12]]
+  ↳ app/views/events/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 11]]
+  ↳ app/views/events/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 11]]
+  ↳ app/views/events/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 10]]
+  ↳ app/views/events/index.html.erb:27
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 10]]
+  ↳ app/views/events/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 9]]
+  ↳ app/views/events/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 9]]
+  ↳ app/views/events/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:23
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 7]]
+  ↳ app/views/events/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 7]]
+  ↳ app/views/events/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 6]]
+  ↳ app/views/events/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 6]]
+  ↳ app/views/events/index.html.erb:28
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 5]]
+  ↳ app/views/events/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 5]]
+  ↳ app/views/events/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 4]]
+  ↳ app/views/events/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 4]]
+  ↳ app/views/events/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/index.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/index.html.erb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 1]]
+  ↳ app/views/events/index.html.erb:27
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 1]]
+  ↳ app/views/events/index.html.erb:28
+  Rendered events/index.html.erb within layouts/application (83.0ms)
+Completed 200 OK in 191ms (Views: 180.6ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/events/2" for 126.95.247.76 at 2021-10-23 07:35:51 +0000
+Cannot render console from 126.95.247.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:28
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:30
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."event_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["event_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/event.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:42
+  [1m[36mEventComment Load (0.1ms)[0m  [1m[34mSELECT "event_comments".* FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:50
+  Rendered events/show.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 140ms (Views: 134.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/attachments/c9e53903b94ab0c8c013a4767685e44046475dce/store/fill/450/300/28fa3f7fce0e26b8fdd38e35745ef0ae8378a1df36505822bdd114e56513/image" for 126.95.247.76 at 2021-10-23 07:35:51 +0000
+Cannot render console from 126.95.247.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2021-10-23 07:35:52 +0000] GET "/c9e53903b94ab0c8c013a4767685e44046475dce/store/fill/450/300/28fa3f7fce0e26b8fdd38e35745ef0ae8378a1df36505822bdd114e56513/image" 200 636.2ms
+
+Started GET "/events/2" for 126.95.247.76 at 2021-10-23 07:47:47 +0000
+Cannot render console from 126.95.247.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:28
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:30
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."event_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["event_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/event.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:42
+  [1m[36mEventComment Load (0.1ms)[0m  [1m[34mSELECT "event_comments".* FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:50
+  Rendered events/show.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 114ms (Views: 107.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events/2" for 126.95.247.76 at 2021-10-23 07:48:22 +0000
+Cannot render console from 126.95.247.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:28
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:30
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."event_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["event_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/event.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:42
+  [1m[36mEventComment Load (0.1ms)[0m  [1m[34mSELECT "event_comments".* FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:50
+  Rendered events/show.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 128ms (Views: 122.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/2" for 126.95.247.76 at 2021-10-23 07:50:09 +0000
+Cannot render console from 126.95.247.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:28
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:30
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."event_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["event_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/event.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:42
+  [1m[36mEventComment Load (0.5ms)[0m  [1m[34mSELECT "event_comments".* FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:50
+  Rendered events/show.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 127ms (Views: 120.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 126.95.247.76 at 2021-10-23 07:55:52 +0000
+Cannot render console from 126.95.247.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  ↳ app/views/homes/top.html.erb:21
+  Rendered homes/top.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 105ms (Views: 104.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/2" for 126.95.247.76 at 2021-10-23 08:19:37 +0000
+Cannot render console from 126.95.247.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:28
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:30
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."event_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["event_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/event.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:42
+  [1m[36mEventComment Load (0.8ms)[0m  [1m[34mSELECT "event_comments".* FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:50
+  Rendered events/show.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 199ms (Views: 187.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/events/2" for 126.95.247.76 at 2021-10-23 08:20:46 +0000
+Cannot render console from 126.95.247.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:28
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:30
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."event_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["event_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/event.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:42
+  [1m[36mEventComment Load (0.1ms)[0m  [1m[34mSELECT "event_comments".* FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:50
+  Rendered events/show.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 113ms (Views: 107.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/2" for 126.95.247.76 at 2021-10-23 08:20:53 +0000
+Cannot render console from 126.95.247.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:28
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:30
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."event_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["event_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/event.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:42
+  [1m[36mEventComment Load (0.1ms)[0m  [1m[34mSELECT "event_comments".* FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:50
+  Rendered events/show.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 125ms (Views: 120.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/2" for 126.95.247.76 at 2021-10-23 08:22:49 +0000
+Cannot render console from 126.95.247.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:28
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:15
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:30
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."event_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["event_id", 2], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/event.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:42
+  [1m[36mEventComment Load (0.1ms)[0m  [1m[34mSELECT "event_comments".* FROM "event_comments" WHERE "event_comments"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:50
+  Rendered events/show.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 127ms (Views: 117.5ms | ActiveRecord: 2.8ms)
+
+
