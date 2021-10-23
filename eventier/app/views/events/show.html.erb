@@ -83,6 +83,8 @@
   <input type="button" value="検索" onclick="codeAddress()">
 
   <div id='map'></div>
+  <div id='lat' style="display:none"><%=@lat?@lat:0.0%></div>
+  <div id='lng' style="display:none"><%=@lon?@lon:0.0%></div>
 
   <style>
   #map {
@@ -91,40 +93,5 @@
   }
   </style>
 
-  <script>
-  let map
 
-  function initMap(){
-    geocoder = new google.maps.Geocoder()
-
-    let map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 40.7828, lng:-73.9653},
-      zoom: 12,
-    });
-
-    marker = new google.maps.Marker({
-      position: {lat: 40.7828, lng:-73.9653},
-      map: map
-    });
-  }
-
-  let geocoder
-
-  function codeAddress(){
-    let inputAddress = document.getElementById('address').value;
-
-    geocoder.geocode( { 'address': inputAddress}, function(results, status) {
-      if (status == 'OK') {
-        map.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location
-        });
-      } else {
-        alert('該当する結果がありませんでした: ' + status);
-      }
-    });
-  }
-  </script>
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
 </div>
